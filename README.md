@@ -92,14 +92,25 @@ From our local machine, ping the VM's public IP address to confirm it's reachabl
 ### 9. Analyze Logs with KQL
 
 Once logs start flowing in (may take a few minutes), we can query them using Kusto Query Language (KQL):
-
+The `SecurityEvent` table contains all security events forwarded by the Azure Monitor Agent from our honeypot.
+4625 is the EventId for failed logon attempt.
 ```kql
 SecurityEvent
-| where TimeGenerated > ago(24h)
-| take 100
+| where EventId == 4625
 ```
+<img width="1190" height="743" alt="image" src="https://github.com/user-attachments/assets/2ddc7ac2-97f3-430e-aeb9-7d42589376f1" />
+Within **less than one hour** of deployment, the honeypot received +60000 failed authentication attempts from multiple external sources !
+<img width="722" height="384" alt="image" src="https://github.com/user-attachments/assets/3ceb4136-99f4-4e1e-8071-e12896caf7e8" />
+Number of unique attacker IP addresses attempting to authenticate against the honeypot :
+<img width="870" height="307" alt="image" src="https://github.com/user-attachments/assets/8700a816-a4ea-4242-b537-f1eb2cc13b6e" />
+Most active attacker IP addresses : 
+<img width="800" height="787" alt="image" src="https://github.com/user-attachments/assets/32f10e45-9833-4d8c-8f32-1d6c58aa5a05" />
+This shows that a limited subset of sources was responsible for the majority of failed authentication attempts.
+-> Brute-force activity.
+Most frequently targeted usernames, typically default or administrative accounts
+This confirms the use of automated brute-force and dictionary attack tools.
+<img width="680" height="444" alt="image" src="https://github.com/user-attachments/assets/f039b72c-d6e3-489d-9a0e-2a84c01f4886" />
 
-The `SecurityEvent` table contains all security events forwarded by the Azure Monitor Agent from our honeypot.
 
 ## Future Enhancements
 
