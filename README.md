@@ -240,4 +240,3 @@ The map will continue to update in real-time as long as the honeypot VM remains 
 ## Future Enhancements
 * Custom alert rules for specific attack patterns
 * Automated threat intelligence integration
-* Dashboard creation for visualization
