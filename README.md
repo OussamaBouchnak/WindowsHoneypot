@@ -35,7 +35,7 @@
 - [View Documentation](docs/02-geolocation-analysis.md)
 - IP geolocation mapping
 - Interactive attack visualization
-- Real-time monitoring dashboard (in progress)
+- Real-time monitoring dashboard
 
 ### Phase 3: Attack Simulation Framework (in progress)
 - [View Documentation](docs/03-attack-simulator.md)
