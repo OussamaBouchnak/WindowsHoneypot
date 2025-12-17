@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+attack-simulator/logs/*
+!attack-simulator/logs/.gitkeep
+
+# Sensitive data
+*.csv
+*.json
+data/
+!data/.gitkeep
+*.key
+*.pem
+.env
+config.local.yaml
+
+# API keys (never commit!)
+*api_key*
+*secret*
+*password*
+
+# Azure
+*.publishsettings
+*.azureProfile
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Wordlists (can be large)
+wordlists/*.txt
+!wordlists/usernames.txt
+!wordlists/passwords.txt
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Screenshots (optional, remove if you want to commit them)
+# screenshots/
+# images/
