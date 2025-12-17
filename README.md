@@ -55,9 +55,6 @@
 - FTP honeypot integration
 - Web application honeypot
 
-## Quick Start
-
-
 ## Technologies Used
 - **Cloud Platform:** Microsoft Azure
 - **SIEM:** Azure Sentinel
